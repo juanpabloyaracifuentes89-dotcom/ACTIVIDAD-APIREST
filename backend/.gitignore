@@ -1,0 +1,7 @@
+#ignorar dependencias
+node_modules
+#ignorar variables de entorno
+.env
+#ignorar archivos de sistema
+.DS_Store
+.THUMBDS_Store
