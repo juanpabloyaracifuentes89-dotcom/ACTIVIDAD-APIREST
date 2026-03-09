@@ -56,7 +56,7 @@ backend
 
 1. Clonar el repositorio
 
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/juanpabloyaracifuentes89-dotcom/ACTIVIDAD-APIREST/tree/main
 
 2. Entrar a la carpeta del proyecto
 
