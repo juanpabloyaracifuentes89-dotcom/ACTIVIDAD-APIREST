@@ -76,10 +76,12 @@ const updateMedia = async (req = request, res = response) => {
     try {
 
         const { id } = req.params;
+        const { _id, __v, fechaCreacion, ...data } = req.body;
+        data.fechaActualizacion = new Date();
 
         const mediaActualizada = await Media.findByIdAndUpdate(
             id,
-            req.body,
+            data,
             { new: true }
         );
 

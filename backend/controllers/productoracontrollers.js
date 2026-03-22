@@ -38,7 +38,33 @@ const createProductora = async (req = request, res = response) => {
 
 };
 
+const updateProductora = async (req = request, res = response) => {
+    try {
+        const { id } = req.params;
+        const { _id, __v, fechaCreacion, ...data } = req.body;
+        data.fechaActualizacion = new Date();
+        const productoraActualizada = await Productora.findByIdAndUpdate(id, data, { new: true });
+        res.status(200).json(productoraActualizada);
+    } catch (error) {
+        console.error("Error al actualizar productora:", error);
+        res.status(500).json({ msg: "Error al actualizar productora" });
+    }
+};
+
+const deleteProductora = async (req = request, res = response) => {
+    try {
+        const { id } = req.params;
+        await Productora.findByIdAndDelete(id);
+        res.status(200).json({ msg: "Productora eliminada correctamente" });
+    } catch (error) {
+        console.error("Error al eliminar productora:", error);
+        res.status(500).json({ msg: "Error al eliminar productora" });
+    }
+};
+
 module.exports = {
     getProductoras,
-    createProductora
+    createProductora,
+    updateProductora,
+    deleteProductora
 };
