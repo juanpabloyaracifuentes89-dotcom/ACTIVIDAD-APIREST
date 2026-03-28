@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div className="min-h-screen flex flex-col bg-gray-100">
         <Navbar />
-        <main className="flex-grow max-w-7xl w-full mx-auto py-8 sm:px-6 lg:px-8">
+        <main className="flex-grow max-w-7xl w-full mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <Routes>
             <Route path="/" element={<Navigate to="/medias" replace />} />
             <Route path="/medias" element={<MediaPage />} />
