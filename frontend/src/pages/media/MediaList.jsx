@@ -19,7 +19,7 @@ const MediaList = ({ medias, onEdit, onDelete, generos, directores, productoras,
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {medias.map((media) => (
+          {Array.isArray(medias) && medias.map((media) => (
             <tr key={media._id} className="hover:bg-slate-50 transition-colors">
               <td className="px-4 py-3 whitespace-nowrap">
                 {media.imagen ? (
@@ -44,7 +44,7 @@ const MediaList = ({ medias, onEdit, onDelete, generos, directores, productoras,
               </td>
             </tr>
           ))}
-          {medias.length === 0 && (
+          {Array.isArray(medias) && medias.length === 0 && (
             <tr>
               <td colSpan="5" className="px-6 py-8 text-center text-sm text-gray-500 bg-gray-50">No hay contenido media registrado en el catálogo.</td>
             </tr>
